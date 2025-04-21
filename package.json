@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/server.ts",
   "scripts": {
-    "dev": "nodemon src/server.ts"
+    "start": "nodemon src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   "description": "",
   "dependencies": {
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
