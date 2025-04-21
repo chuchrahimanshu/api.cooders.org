@@ -1,13 +1,13 @@
 // Import Section
 import express from "express";
 import type { Router } from "express";
-import apiRouter from "./api/api.routes";
+import healthRouter from "./health/health.routes";
 
 // Configuration Section
 const router: Router = express.Router();
 
 // Middleware Section
-router.use("/api", apiRouter);
+router.use("/health", healthRouter);
 
 // Export Section
 export default router;

@@ -7,6 +7,7 @@ import {
   PORT,
   PRODUCTION_URI,
 } from "./constants/index.constants";
+import router from "./routes/index.routes";
 
 // Configuration Section
 const SERVER_URI: string =
@@ -17,6 +18,7 @@ function main(): void {
   try {
     connectMongoDB()
       .then(() => {
+        app.use("/", router);
         app.listen(PORT, (error) => {
           if (error) {
             console.log(`ERROR: Listening Server at ${SERVER_URI}`, error);
