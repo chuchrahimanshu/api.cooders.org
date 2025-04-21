@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
     "url": "https://github.com/chuchrahimanshu/api.cooders.org/issues"
   },
   "homepage": "https://github.com/chuchrahimanshu/api.cooders.org#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "typescript": "^5.8.3"
+  }
 }

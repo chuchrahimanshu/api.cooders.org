@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // More modern target for better features (like optional chaining)
+    "module": "CommonJS", // CommonJS is good for Node.js (or "ESNext" for ESM support)
+    "rootDir": "src", // Where your source TypeScript files live
+    "outDir": "dist", // Where compiled JavaScript goes
+    "strict": true, // Enables all strict type-checking options
+    "esModuleInterop": true, // Allows default import from CommonJS
+    "forceConsistentCasingInFileNames": true, // Prevents casing issues across OSes
+    "moduleResolution": "node", // Resolves modules like Node.js
+    "resolveJsonModule": true, // Allows importing `.json` files
+    "skipLibCheck": true, // Skips type checks for `.d.ts` files (faster builds)
+    "allowSyntheticDefaultImports": true, // Enables default imports even if not natively supported
+    "noImplicitAny": true // Makes types safer by not allowing `any` implicitly
+  },
+  "include": ["src"], // Only compile files in `src`
+  "exclude": ["node_modules", "dist"] // Don't compile dependencies or build output
+}
