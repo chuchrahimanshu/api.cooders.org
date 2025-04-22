@@ -13,8 +13,8 @@ interface DeveloperSchemaInterface {
 }
 
 interface TokenSchemaInterface {
-  developer: string;
-  refreshToken: {
+  developer: ObjectId;
+  refreshToken?: {
     token: string;
     createdAt: date;
   };
