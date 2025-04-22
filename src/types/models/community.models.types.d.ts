@@ -53,22 +53,11 @@ interface ReplySchemaInterface {
   pinned: boolean;
 }
 
-interface ReactionPostSchemaInterface {
+interface ReactionSchemaInterface {
   developer: ObjectId;
-  reaction: ObjectId;
-  post: ObjectId;
-}
-
-interface ReactionCommentSchemaInterface {
-  developer: ObjectId;
-  reaction: ObjectId;
-  comment: ObjectId;
-}
-
-interface ReactionReplySchemaInterface {
-  developer: ObjectId;
-  reaction: ObjectId;
-  reply: ObjectId;
+  reactionType: ObjectId;
+  targetModel: "Post" | "Comment" | "Reply";
+  targetId: ObjectId;
 }
 
 interface RepostPostSchemaInterface {

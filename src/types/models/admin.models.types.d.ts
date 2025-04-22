@@ -3,7 +3,7 @@ interface AccountTypeSchemaInterface {
   isActive: boolean;
 }
 
-interface ReactionSchemaInterface {
+interface ReactionTypeSchemaInterface {
   title: string;
   isActive: boolean;
   icon: string;
