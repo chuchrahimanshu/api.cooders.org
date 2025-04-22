@@ -3,23 +3,22 @@ import mongoose from "mongoose";
 import type { Schema, Model } from "mongoose";
 
 // Schema Section
-const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
+const commentSchema: Schema<CommentSchemaInterface> = new mongoose.Schema(
   {
     developer: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Developer",
       required: true,
     },
-    title: {
-      type: String,
-      trim: true,
-      maxlength: 100,
+    post: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Post",
       required: true,
     },
-    description: {
+    content: {
       type: String,
       trim: true,
-      maxlength: 1500,
+      maxlength: 500,
       required: true,
     },
     attachments: [
@@ -33,41 +32,23 @@ const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
         type: String,
       },
     ],
-    tags: [
-      {
-        type: String,
-        lowercase: true,
-        trim: true,
-        maxlength: 30,
-      },
-    ],
     mentions: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Developer",
       },
     ],
-    hidden: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
     pinned: {
       type: Boolean,
       required: true,
       default: false,
     },
-    commentsEnabled: {
+    repliesEnabled: {
       type: Boolean,
       required: true,
       default: true,
     },
-    repostEnabled: {
-      type: Boolean,
-      required: true,
-      default: true,
-    },
-    private: {
+    hidden: {
       type: Boolean,
       required: true,
       default: false,
@@ -77,23 +58,6 @@ const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
       required: true,
       default: false,
     },
-    slug: {
-      type: String,
-      lowercase: true,
-      trim: true,
-    },
-    referenceLinks: [
-      {
-        title: {
-          type: String,
-          trim: true,
-        },
-        url: {
-          type: String,
-          trim: true,
-        },
-      },
-    ],
   },
   {
     timestamps: true,
@@ -101,5 +65,8 @@ const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
 );
 
 // Model Section
-const Post: Model<PostSchemaInterface> = mongoose.model("Post", postSchema);
-export default Post;
+const Comment: Model<CommentSchemaInterface> = mongoose.model(
+  "Comment",
+  commentSchema
+);
+export default Comment;

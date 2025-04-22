@@ -26,12 +26,12 @@ interface CommentSchemaInterface {
   developer: ObjectId;
   post: ObjectId;
   content: string;
-  snippets?: string[];
-  mentions?: ObjectId[];
   attachments?: {
     url: string;
     id: string;
   }[];
+  snippets?: string[];
+  mentions?: ObjectId[];
   pinned: boolean;
   repliesEnabled: boolean;
   hidden: boolean;
