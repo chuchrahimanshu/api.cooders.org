@@ -7,7 +7,7 @@ interface AccountSchemaInterface {
 }
 
 interface DeveloperSchemaInterface {
-  email: string;
+  emailAddress: string;
   username: string;
   password: string;
 }
