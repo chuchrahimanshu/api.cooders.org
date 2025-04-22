@@ -60,7 +60,7 @@ interface ReactionSchemaInterface {
   targetId: ObjectId;
 }
 
-interface RepostPostSchemaInterface {
+interface RepostSchemaInterface {
   developer: ObjectId;
   post: ObjectId;
 }
