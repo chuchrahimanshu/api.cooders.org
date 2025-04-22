@@ -53,33 +53,21 @@ interface ReplySchemaInterface {
   pinned: boolean;
 }
 
-interface BoostPostSchemaInterface {
+interface ReactionPostSchemaInterface {
   developer: ObjectId;
+  reaction: ObjectId;
   post: ObjectId;
 }
 
-interface FlagPostSchemaInterface {
+interface ReactionCommentSchemaInterface {
   developer: ObjectId;
-  post: ObjectId;
-}
-
-interface BoostCommentSchemaInterface {
-  developer: ObjectId;
+  reaction: ObjectId;
   comment: ObjectId;
 }
 
-interface FlagCommentSchemaInterface {
+interface ReactionReplySchemaInterface {
   developer: ObjectId;
-  comment: ObjectId;
-}
-
-interface BoostReplySchemaInterface {
-  developer: ObjectId;
-  reply: ObjectId;
-}
-
-interface FlagReplySchemaInterface {
-  developer: ObjectId;
+  reaction: ObjectId;
   reply: ObjectId;
 }
 
