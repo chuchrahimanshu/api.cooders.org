@@ -1,13 +1,13 @@
 // Import Section
 import express from "express";
 import type { Router } from "express";
-import { healthCheck } from "../../../../controllers/index.controllers";
+import postCommunityRouter from "./post.community.routes";
 
 // Configuration Section
 const router: Router = express.Router();
 
-// Routes Section
-router.route("/").get(healthCheck);
+// Middleware Section
+router.use("/posts", postCommunityRouter);
 
 // Export Section
 export default router;
