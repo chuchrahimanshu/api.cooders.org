@@ -13,7 +13,7 @@ interface PostSchemaInterface {
   pinned: boolean;
   commentsEnabled: boolean;
   repostEnabled: boolean;
-  visibility: "PUBLIC" | "PRIVATE";
+  private: boolean;
   isEdited: boolean;
   slug?: string;
   referenceLinks?: {
