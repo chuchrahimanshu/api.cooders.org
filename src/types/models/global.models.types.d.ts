@@ -1,8 +1,9 @@
 interface AccountSchemaInterface {
-  authenticationType: ObjectId;
+  accounts: {
+    id: ObjectId;
+    isActive: boolean;
+  }[];
   developer: ObjectId;
-  isCreated: boolean;
-  isActive: boolean;
 }
 
 interface DeveloperSchemaInterface {

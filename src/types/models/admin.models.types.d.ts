@@ -1,4 +1,4 @@
-interface AuthenticationSyncSchemaInterface {
+interface AccountTypeSchemaInterface {
   platform: string;
   isActive: boolean;
 }
