@@ -6,6 +6,7 @@ import {
   JWT_ACCESS_TOKEN_SECRET,
   JWT_REFRESH_TOKEN_SECRET,
 } from "../../constants/index.constants";
+import bcrypt from "bcryptjs";
 
 // Schema Section
 const developerSchema: Schema<DeveloperSchemaInterface> = new mongoose.Schema(
@@ -33,6 +34,15 @@ const developerSchema: Schema<DeveloperSchemaInterface> = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+// Schema Hooks
+developerSchema.pre("save", async function (next) {
+  if (this.isModified("password")) {
+    const salt: string = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+  }
+  next();
+});
 
 // Schema Methods
 developerSchema.methods.generateAccessToken =
