@@ -6,10 +6,12 @@ interface AccountSchemaInterface {
   developer: ObjectId;
 }
 
-interface DeveloperSchemaInterface {
+interface DeveloperSchemaInterface extends Document {
   emailAddress: string;
   username: string;
   password: string;
+  generateAccessToken(): Promise<string>;
+  generateRefreshToken(): Promise<string>;
 }
 
 interface TokenSchemaInterface {

@@ -1,7 +1,6 @@
 interface APIErrorHandlerInterface {
   status: number;
   message: string;
-  success: boolean;
   data?: any;
 }
 

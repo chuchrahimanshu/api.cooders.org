@@ -5,7 +5,7 @@ function asyncHandler(
     req: Request,
     res: Response,
     next: NextFunction
-  ) => Promise<void>
+  ) => Promise<any>
 ) {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
