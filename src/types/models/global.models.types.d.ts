@@ -7,6 +7,7 @@ interface AccountSchemaInterface {
 }
 
 interface DeveloperSchemaInterface extends Document {
+  _id: ObjectId;
   emailAddress: string;
   username: string;
   password: string;

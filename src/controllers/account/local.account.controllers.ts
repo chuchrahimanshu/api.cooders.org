@@ -128,10 +128,69 @@ export const signin = asyncHandler(async (req: Request, res: Response) => {
     );
 });
 
-export const signout = asyncHandler(async (req: Request, res: Response) => {});
+export const signout = asyncHandler(async (req: Request, res: Response) => {
+  const developer = req.developer;
+  if (!developer) {
+    return res.status(401).json(
+      new APIError({
+        message: "Unauthorized - Developer not found",
+        status: 401,
+      })
+    );
+  }
+
+  const token = await Token.findOne({ developer: developer._id });
+  if (!token) {
+    return res.status(401).json(
+      new APIError({
+        message: "Unauthorized Access Detected!",
+        status: 401,
+      })
+    );
+  }
+
+  token.refreshToken = {
+    token: "",
+    createdAt: "",
+  };
+  await token.save();
+
+  return res
+    .clearCookie("accessToken", cookieOptions)
+    .clearCookie("refreshToken", cookieOptions)
+    .status(200)
+    .json(
+      new APIResponse({
+        message: "Successfully Signed-Out",
+        status: 200,
+      })
+    );
+});
 
 export const forgetPassword = asyncHandler(
-  async (req: Request, res: Response) => {}
+  async (req: Request, res: Response) => {
+    const { username, otp } = req.body;
+
+    const developer = await Developer.findOne({ username });
+    if (!developer) {
+      return res.status(401).json(
+        new APIError({
+          message: "Unauthorized Access - Developer not found!",
+          status: 401,
+        })
+      );
+    }
+
+    const token = await Token.findOne({ developer: developer._id });
+    if (!token) {
+      return res.status(401).json(
+        new APIError({
+          message: "Unauthorized Access - Token not found!",
+          status: 401,
+        })
+      );
+    }
+  }
 );
 
 export const emailVerification = asyncHandler(

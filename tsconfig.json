@@ -11,7 +11,8 @@
     "resolveJsonModule": true, // Allows importing `.json` files
     "skipLibCheck": true, // Skips type checks for `.d.ts` files (faster builds)
     "allowSyntheticDefaultImports": true, // Enables default imports even if not natively supported
-    "noImplicitAny": true // Makes types safer by not allowing `any` implicitly
+    "noImplicitAny": true, // Makes types safer by not allowing `any` implicitly,
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
   "include": ["src"], // Only compile files in `src`
   "exclude": ["node_modules", "dist"] // Don't compile dependencies or build output

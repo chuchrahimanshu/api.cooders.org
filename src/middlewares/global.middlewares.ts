@@ -8,13 +8,9 @@ import {
   JWT_REFRESH_TOKEN_SECRET,
 } from "../constants/index.constants";
 
-interface AuthenticatedRequest extends Request {
-  developer: DeveloperSchemaInterface;
-}
-
 const refreshTokenRotation = async (
   refreshToken: string,
-  req: AuthenticatedRequest,
+  req: Request,
   res: Response,
   next: NextFunction
 ) => {
@@ -23,8 +19,8 @@ const refreshTokenRotation = async (
   });
   if (!token) {
     return res
-      .cookie("accessToken", "", cookieOptions)
-      .cookie("refreshToken", "", cookieOptions)
+      .clearCookie("accessToken", cookieOptions)
+      .clearCookie("refreshToken", cookieOptions)
       .status(401)
       .json(
         new APIError({
@@ -40,8 +36,8 @@ const refreshTokenRotation = async (
   );
   if (!refreshTokenDetails || typeof refreshTokenDetails === "string") {
     return res
-      .cookie("accessToken", "", cookieOptions)
-      .cookie("refreshToken", "", cookieOptions)
+      .clearCookie("accessToken", cookieOptions)
+      .clearCookie("refreshToken", cookieOptions)
       .status(401)
       .json(
         new APIError({
@@ -72,16 +68,17 @@ const refreshTokenRotation = async (
 };
 
 export const isAuthenticated = async (
-  req: AuthenticatedRequest,
+  req: Request,
   res: Response,
   next: NextFunction
-) => {
+): Promise<any> => {
+  const typedReq = req as Request;
   try {
     const { accessToken, refreshToken } = req.cookies;
     if (!accessToken && !refreshToken) {
       return res
-        .cookie("accessToken", "", cookieOptions)
-        .cookie("refreshToken", "", cookieOptions)
+        .clearCookie("accessToken", cookieOptions)
+        .clearCookie("refreshToken", cookieOptions)
         .status(401)
         .json(
           new APIError({

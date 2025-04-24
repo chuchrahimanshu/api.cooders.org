@@ -9,6 +9,15 @@ import chatRouter from "./chat/chat.routes";
 // Configuration Section
 const router: Router = express.Router();
 
+// Global Express
+declare global {
+  namespace Express {
+    interface Request {
+      developer?: DeveloperSchemaInterface;
+    }
+  }
+}
+
 // Middleware Section
 router.use("/health", healthRouter);
 router.use("/accounts", accountRouter);
