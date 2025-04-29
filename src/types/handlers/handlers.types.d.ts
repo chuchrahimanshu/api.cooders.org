@@ -9,3 +9,10 @@ interface APIResponseHandlerInterface {
   message: string;
   data?: any;
 }
+
+interface SendEmailHandlerInterface {
+  from: string;
+  to: string;
+  subject: string;
+  html: string;
+}

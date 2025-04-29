@@ -7,3 +7,11 @@ export const JWT_ACCESS_TOKEN_SECRET: string =
   process.env.JWT_ACCESS_TOKEN_SECRET || "";
 export const JWT_REFRESH_TOKEN_SECRET: string =
   process.env.JWT_REFRESH_TOKEN_SECRET || "";
+export const NODEMAILER_HOST: string = process.env.NODEMAILER_HOST || "";
+export const NODEMAILER_PORT: number = Number(
+  process.env.NODEMAILER_PORT || 2525
+);
+export const NODEMAILER_AUTH_USER: string =
+  process.env.NODEMAILER_AUTH_USER || "";
+export const NODEMAILER_AUTH_PASS: string =
+  process.env.NODEMAILER_AUTH_PASS || "";

@@ -1,3 +1,4 @@
 import connectMongoDB from "./database.config";
+import { transport } from "./nodemailer.config";
 
-export { connectMongoDB };
+export { connectMongoDB, transport };

@@ -6,6 +6,10 @@ import {
   MONGODB_URI,
   JWT_ACCESS_TOKEN_SECRET,
   JWT_REFRESH_TOKEN_SECRET,
+  NODEMAILER_AUTH_PASS,
+  NODEMAILER_AUTH_USER,
+  NODEMAILER_HOST,
+  NODEMAILER_PORT,
 } from "./env.constants";
 import { cookieOptions } from "./helper.constants";
 
@@ -18,4 +22,8 @@ export {
   JWT_ACCESS_TOKEN_SECRET,
   JWT_REFRESH_TOKEN_SECRET,
   cookieOptions,
+  NODEMAILER_AUTH_PASS,
+  NODEMAILER_AUTH_USER,
+  NODEMAILER_HOST,
+  NODEMAILER_PORT,
 };
