@@ -1,6 +1,7 @@
 // Import Section
 import mongoose from "mongoose";
 import type { Schema, Model } from "mongoose";
+import { IndividualChatSchemaInterface } from "../../types/index.types";
 
 // Schema Section
 const individualChatSchema: Schema<IndividualChatSchemaInterface> =

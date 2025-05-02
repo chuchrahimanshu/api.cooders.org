@@ -1,4 +1,4 @@
-interface IndividualChatSchemaInterface {
+export interface IndividualChatSchemaInterface {
   sender: ObjectId;
   receiver: ObjectId;
   content: string;
@@ -15,7 +15,7 @@ interface IndividualChatSchemaInterface {
   status: "SENT" | "DELIVERED" | "READ";
 }
 
-interface CommunityChatSchemaInterface {
+export interface CommunityChatSchemaInterface {
   developer: ObjectId;
   content: string;
   attachments?: {

@@ -1,6 +1,7 @@
 // Import Section
 import mongoose from "mongoose";
 import type { Schema, Model } from "mongoose";
+import { TokenSchemaInterface } from "../../types/index.types";
 
 // Schema Section
 const tokenSchema: Schema<TokenSchemaInterface> = new mongoose.Schema(

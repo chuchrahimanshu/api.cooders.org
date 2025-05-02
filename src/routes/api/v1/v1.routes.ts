@@ -5,6 +5,7 @@ import healthRouter from "./health/health.routes";
 import accountRouter from "./account/account.routes";
 import communityRouter from "./community/community.routes";
 import chatRouter from "./chat/chat.routes";
+import { DeveloperSchemaInterface } from "../../../types/index.types";
 
 // Configuration Section
 const router: Router = express.Router();

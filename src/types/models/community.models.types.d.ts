@@ -1,4 +1,4 @@
-interface PostSchemaInterface {
+export interface PostSchemaInterface {
   developer: ObjectId;
   title: string;
   description: string;
@@ -22,7 +22,7 @@ interface PostSchemaInterface {
   }[];
 }
 
-interface CommentSchemaInterface {
+export interface CommentSchemaInterface {
   developer: ObjectId;
   post: ObjectId;
   content: string;
@@ -38,7 +38,7 @@ interface CommentSchemaInterface {
   isEdited: boolean;
 }
 
-interface ReplySchemaInterface {
+export interface ReplySchemaInterface {
   developer: ObjectId;
   comment: ObjectId;
   content: string;
@@ -53,14 +53,14 @@ interface ReplySchemaInterface {
   pinned: boolean;
 }
 
-interface ReactionSchemaInterface {
+export interface ReactionSchemaInterface {
   developer: ObjectId;
   reactionType: ObjectId;
   targetModel: "Post" | "Comment" | "Reply";
   targetId: ObjectId;
 }
 
-interface RepostSchemaInterface {
+export interface RepostSchemaInterface {
   developer: ObjectId;
   post: ObjectId;
 }

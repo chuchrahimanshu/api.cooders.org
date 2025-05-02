@@ -1,4 +1,5 @@
 import { transport } from "../config/index.config";
+import { SendEmailHandlerInterface } from "../types/index.types";
 
 export async function sendEmail({
   from,

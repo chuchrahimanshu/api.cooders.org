@@ -1,6 +1,7 @@
 // Import Section
 import mongoose from "mongoose";
 import type { Schema, Model } from "mongoose";
+import { PostSchemaInterface } from "../../types/index.types";
 
 // Schema Section
 const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(

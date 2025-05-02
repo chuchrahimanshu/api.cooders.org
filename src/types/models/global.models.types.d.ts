@@ -1,4 +1,4 @@
-interface AccountSchemaInterface {
+export interface AccountSchemaInterface {
   accounts: {
     id: ObjectId;
     isActive: boolean;
@@ -6,7 +6,7 @@ interface AccountSchemaInterface {
   developer: ObjectId;
 }
 
-interface DeveloperSchemaInterface extends Document {
+export interface DeveloperSchemaInterface extends Document {
   _id: ObjectId;
   emailAddress: string;
   username: string;
@@ -15,7 +15,7 @@ interface DeveloperSchemaInterface extends Document {
   generateRefreshToken(): Promise<string>;
 }
 
-interface TokenSchemaInterface {
+export interface TokenSchemaInterface {
   developer: ObjectId;
   refreshToken?: {
     token: string;

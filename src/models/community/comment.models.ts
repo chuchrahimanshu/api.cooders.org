@@ -1,6 +1,7 @@
 // Import Section
 import mongoose from "mongoose";
 import type { Schema, Model } from "mongoose";
+import { CommentSchemaInterface } from "../../types/index.types";
 
 // Schema Section
 const commentSchema: Schema<CommentSchemaInterface> = new mongoose.Schema(

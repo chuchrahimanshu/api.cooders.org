@@ -7,6 +7,7 @@ import {
   JWT_REFRESH_TOKEN_SECRET,
 } from "../../constants/index.constants";
 import bcrypt from "bcryptjs";
+import { DeveloperSchemaInterface } from "../../types/index.types";
 
 // Schema Section
 const developerSchema: Schema<DeveloperSchemaInterface> = new mongoose.Schema(

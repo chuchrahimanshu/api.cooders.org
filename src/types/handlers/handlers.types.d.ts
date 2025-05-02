@@ -1,16 +1,16 @@
-interface APIErrorHandlerInterface {
+export interface APIErrorHandlerInterface {
   status: number;
   message: string;
   data?: any;
 }
 
-interface APIResponseHandlerInterface {
+export interface APIResponseHandlerInterface {
   status: number;
   message: string;
   data?: any;
 }
 
-interface SendEmailHandlerInterface {
+export interface SendEmailHandlerInterface {
   from: string;
   to: string;
   subject: string;

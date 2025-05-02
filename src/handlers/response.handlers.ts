@@ -1,3 +1,5 @@
+import { APIResponseHandlerInterface } from "../types/index.types";
+
 class APIResponse {
   public status: number;
   public message: string;

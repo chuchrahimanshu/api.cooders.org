@@ -1,3 +1,5 @@
+import { APIErrorHandlerInterface } from "../types/index.types";
+
 class APIError extends Error {
   public status: number;
   public success: boolean;
