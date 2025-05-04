@@ -15,3 +15,4 @@ export const NODEMAILER_AUTH_USER: string =
   process.env.NODEMAILER_AUTH_USER || "";
 export const NODEMAILER_AUTH_PASS: string =
   process.env.NODEMAILER_AUTH_PASS || "";
+export const OTP_VALID_TIME: number = Number(process.env.OTP_VALID_TIME || 0);

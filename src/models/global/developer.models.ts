@@ -30,6 +30,11 @@ const developerSchema: Schema<DeveloperSchemaInterface> = new mongoose.Schema(
       type: String,
       required: true,
     },
+    emailVerification: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
   },
   {
     timestamps: true,

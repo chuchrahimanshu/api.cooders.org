@@ -11,6 +11,7 @@ export interface DeveloperSchemaInterface extends Document {
   emailAddress: string;
   username: string;
   password: string;
+  emailVerification: boolean;
   generateAccessToken(): Promise<string>;
   generateRefreshToken(): Promise<string>;
 }
@@ -23,14 +24,14 @@ export interface TokenSchemaInterface {
   };
   emailVerification?: {
     token: string;
-    createdAt: string;
+    createdAt: date;
   };
   tfa?: {
     token: string;
-    createdAt: string;
+    createdAt: date;
   };
   forgetPassword?: {
     token: string;
-    createdAt: string;
+    createdAt: date;
   };
 }
