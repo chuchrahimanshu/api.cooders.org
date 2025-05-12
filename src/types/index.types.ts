@@ -19,6 +19,10 @@ import {
   DeveloperSchemaInterface,
   TokenSchemaInterface,
 } from "./models/global.models.types";
+import {
+  DifficultyLevelSchemaInterface,
+  ProblemSchemaInterface,
+} from "./models/solvex.models.types";
 
 // Import Section - HANDLERS
 import {
@@ -44,4 +48,6 @@ export {
   RepostSchemaInterface,
   SendEmailHandlerInterface,
   TokenSchemaInterface,
+  DifficultyLevelSchemaInterface,
+  ProblemSchemaInterface,
 };
