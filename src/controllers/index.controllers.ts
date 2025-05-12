@@ -43,6 +43,16 @@ import {
   reactionOnReply,
 } from "./community/reaction.community.controllers";
 
+// Import Section - SOLVEX
+import {
+  createProblem,
+  deleteProblem,
+  getAllProblems,
+  getAllSolvedProblems,
+  getProblem,
+  updateProblem,
+} from "./solvex/problem.solvex.controllers";
+
 // Export Section
 export {
   healthCheck,
@@ -72,4 +82,10 @@ export {
   reactionOnPost,
   reactionOnComment,
   reactionOnReply,
+  createProblem,
+  deleteProblem,
+  getAllProblems,
+  getAllSolvedProblems,
+  getProblem,
+  updateProblem,
 };
