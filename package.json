@@ -4,7 +4,7 @@
   "description": "🧩 Studio API – Where Logic Meets Global Dev Flow 🌐🚀",
   "main": "src/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsnd --respawn -r tsconfig-paths/register --pretty --transpile-only src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/chuchrahimanshu/api.cooders.org/issues"
   },
-  "homepage": "https://github.com/chuchrahimanshu/api.cooders.org#readme"
+  "homepage": "https://github.com/chuchrahimanshu/api.cooders.org#readme",
+  "dependencies": {
+    "@types/node": "^24.0.3",
+    "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.8.16",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.3"
+  }
 }
