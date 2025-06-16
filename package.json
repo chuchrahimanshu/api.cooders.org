@@ -1,0 +1,22 @@
+{
+  "name": "api.cooders.org",
+  "version": "1.0.0",
+  "description": "🧩 Studio API – Where Logic Meets Global Dev Flow 🌐🚀",
+  "main": "src/server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuchrahimanshu/api.cooders.org.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Himanshu Chuchra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuchrahimanshu/api.cooders.org/issues"
+  },
+  "homepage": "https://github.com/chuchrahimanshu/api.cooders.org#readme"
+}
