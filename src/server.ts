@@ -2,11 +2,13 @@
 import app from "./app";
 import { connectToDatabaseMongoDB } from "./config";
 import { PORT } from "./constants/env.constants";
+import router from "./routes/index.routes";
 
 // Configuration Section
 const SERVER_PORT: number = parseInt(PORT) || 8000;
 
 // Igniting the Server
+app.use("/", router);
 app.listen(SERVER_PORT, async (err) => {
   if (err) {
     console.log(`Error - Connecting server at http://localhost:${SERVER_PORT}`);
