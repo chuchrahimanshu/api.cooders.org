@@ -1,20 +1,20 @@
 import { NextFunction, Request, RequestHandler, Response } from "express";
 
-const asyncHandler = (requestHandler: RequestHandler) => {
-  return (req: Request, res: Response, next: NextFunction) => {
-    try {
-      requestHandler(req, res, next);
-    } catch (error) {
+const asyncHandler = (
+  requestHandler: (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => Promise<any>
+) => {
+  return (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    return Promise.resolve(requestHandler(req, res, next)).catch((error) => {
       if (error instanceof Error) {
-        return res.status(500).json({
-          message: error.message,
-        });
+        res.status(500).json({ message: error.message });
       } else {
-        return res.status(500).json({
-          message: error,
-        });
+        res.status(500).json({ message: String(error) });
       }
-    }
+    });
   };
 };
 
